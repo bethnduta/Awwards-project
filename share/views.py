@@ -21,4 +21,4 @@ def home(request):
     return render(request, 'share/home.html',context)
     
 def about(request):
-    return render(request,'share/about.html')    
+    return render(request,'share/about.html',{'title':'about'})    
