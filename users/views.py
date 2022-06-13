@@ -5,10 +5,10 @@ from django.contrib import messages
 def register(request):
     if request.method == 'POST':
         form=UserCreationForm(request.POST)
-        if form.isvalid():
+        if form.is_valid():
             username=form.cleaned_data['username']
             messages.success(request,f'Account created for {username}!')
-            return redirect('home')
-        else:    
+        return redirect('home')
+    else:    
             form = UserCreationForm()
-        return render(request, 'users/register.html',{'form':form})
+    return render(request, 'users/register.html',{'form':form})
