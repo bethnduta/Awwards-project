@@ -1,12 +1,12 @@
 body {
     /* background: #fafafa; */
-    color: #333333;
+    color: #0f0e0e;
     margin-top: 5rem;
-    background-color: #cfd5d8;
+    background-color: #eaeff0;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    color: #d8a1a1;
+    color: #0f0e0e;
   }
   
   ul {
@@ -14,15 +14,20 @@ body {
   }
   
   .bg-steel {
-    background-color: #8a5f83;
+    background-color: #0c090c;
   }
   
   .site-header .navbar-nav .nav-link {
-    color: #546d67;
+    color: #ffffff;
+    font-size: 17px;
   }
   
+.navbar-nav .nav-link {
+  text-decoration: none;
+}
+
   .site-header .navbar-nav .nav-link:hover {
-    color: #ffffff;
+    color: #ddd2d2;
   }
   
   .site-header .navbar-nav .nav-link.active {
@@ -30,7 +35,7 @@ body {
   }
   
   .content-section {
-    background: #ffffff;
+    background: #ecf2f5b9;
     padding: 10px 20px;
     border: 1px solid #dddddd;
     border-radius: 3px;
