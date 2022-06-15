@@ -1,6 +1,7 @@
 ## Author
 Beth Nduta
 ### AWWARDS-LIKE PROJECT
+![image](https://user-images.githubusercontent.com/85553801/173741821-942a2c3a-58c4-4491-aa95-226d5794d312.png)
 
 ## DESCRIPTION OF THE PROJECT
 As a user you can:
