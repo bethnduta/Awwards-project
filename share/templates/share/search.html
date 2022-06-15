@@ -4,6 +4,11 @@
 <center>
     {% if searched %}
         <h1>You searched for {{searched}}</h1>
+        <br>
+        {% for post in posts %}
+            <a href="{% url 'home' %}">{{post}}</a>
+        {% endfor %}
+           
     {% else %}
         <h1>Hey you forgot to search for.......</h1>
     {% endif %}    

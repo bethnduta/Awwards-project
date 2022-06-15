@@ -60,6 +60,7 @@ def about(request):
 def search(request):
     if request.method == "POST": 
         searched = request.POST['searched']
-        return render(request,'share/search.html',{'searched':searched})  
+        post=Post.objects.filter(title__icontains=searched)
+        return render(request,'share/search.html',{'searched':searched},{'post':post}) 
     else:
          return render(request,'share/search.html')        
