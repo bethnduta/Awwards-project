@@ -21,4 +21,4 @@ class PostTest(TestCase):
 class PostDetailTest(TestCase):
     def test_post_detail_status_code(self):
         response = self.client.get('/post/1/')
-        self.assertEquals(response.status_code, 200)                          
+        self.assertEquals(response.status_code, 200)                           
