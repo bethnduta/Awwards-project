@@ -55,4 +55,11 @@ class PostDeleteView(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
         return False 
 
 def about(request):
-    return render(request,'share/about.html',{'title':'about'})    
+    return render(request,'share/about.html',{'title':'about'})   
+
+def search(request):
+    if request.method == "POST": 
+        searched = request.POST['searched']
+        return render(request,'share/search.html',{'searched':searched})  
+    else:
+         return render(request,'share/search.html')        
