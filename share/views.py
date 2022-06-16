@@ -1,3 +1,4 @@
+from turtle import title
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
@@ -60,7 +61,7 @@ def about(request):
 def search(request):
     if request.method == "POST": 
         searched = request.POST['searched']
-        post=Post.objects.filter(title__icontains=searched)
-        return render(request,'share/search.html',{'searched':searched},{'post':post}) 
+        post=Post.objects.filter(title__icontains=searched).all()
+        return render(request,'share/search.html',{'post':post,'searched':searched})
     else:
          return render(request,'share/search.html')        
