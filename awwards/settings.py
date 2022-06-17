@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'share',
     'crispy_forms',
     'users',
-    'rest_framework',
 ]
 
 MIDDLEWARE = [

@@ -4,11 +4,9 @@ from django.http import HttpResponse
 from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
-from .serializers import PostSerializer
 
 
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
+
 
 
 
@@ -73,21 +71,3 @@ def search(request):
         return render(request,'share/search.html',{'post':post,'searched':searched})
     else:
          return render(request,'share/search.html')        
-
-@api_view(['GET'])
-def getData(request):
-    if request.method == 'GET':
-        posts = Post.objects.all()
-        serializer = PostSerializer(posts, many=True)
-        return Response(serializer.data)
-
-@api_view(['POST'])
-def postData(request):
-    if request.method == 'POST':
-        serializer = PostSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=201)
-        return Response(serializer.errors, status=400)        
-
-
