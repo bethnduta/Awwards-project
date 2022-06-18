@@ -32,7 +32,7 @@ def profile(request):
             messages.success(request,f'Account updated successfully')
             return redirect('profile')
     u_form=UserUpdateForm(instance=request.user)
-    p_form=ProfileUpdateForm(instance=request.user.profile())
+    p_form=ProfileUpdateForm(instance=request.user)
 
     context={'u_form':u_form,'p_form':p_form}
     return render(request,'users/profile.html',context)
