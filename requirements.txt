@@ -18,5 +18,3 @@ urllib3==1.26.9
 virtualenv==20.14.1
 whitenoise==6.2.0
 djangorestframework==3.13.1
-tk==0.1.0
-matplotlib==3.5.2
