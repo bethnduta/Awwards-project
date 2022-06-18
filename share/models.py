@@ -1,8 +1,10 @@
+from email.mime import image
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
 from django.db.models.deletion import CASCADE
+from PIL import Image
 
 # Create your models here.
 class Post(models.Model):
@@ -10,6 +12,7 @@ class Post(models.Model):
     content = models.TextField(null=True, blank=True)
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    image = models.ImageField(default='flower.jpg')
 
     def __str__(self):
         return self.title

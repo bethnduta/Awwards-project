@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
@@ -7,6 +7,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from share.serializer import PostSerializer
+from .forms import PostForm
 
 
 # Create your views here.
@@ -25,19 +26,17 @@ class PostDetailView(DetailView):
     model=Post 
     template_name='share/detail.html'
 
-class PostCreateView(LoginRequiredMixin, CreateView):
-    model=Post
-    fields=['title','content']
-
-    def form_valid(self,form):
-        form.instance.author=self.request.user
-        return super().form_valid(form) 
-
-    def test_func(self):
-        post=self.get_object()
-        if self.request.user==post.author:
-            return True
-        return False     
+def post_create(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post=form.save(commit=False)
+            post.author=request.user
+            form.save()
+            return redirect('home')
+    else:
+        form = PostForm()
+    return render(request, 'share/post_form.html', {'form': form})
 
 
 class PostUpdateView(LoginRequiredMixin,UserPassesTestMixin, UpdateView):
