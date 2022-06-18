@@ -13,5 +13,6 @@ urlpatterns = [
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
     path('search/',views.search,name='search1'),
-    
+    path('api/post/',views.PostView.as_view(),name='apipost'),
+
 ]

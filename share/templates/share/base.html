@@ -24,6 +24,7 @@
               <div class="navbar-nav mr-auto">
                 <a class="nav-item nav-link" href="{% url 'home' %}" class="btn btn-outline btn-sm">Home</a>
                 <a class="nav-item nav-link" href="{% url 'about' %}" class="btn btn-outline btn-sm">About</a>
+                <a class="nav-item nav-link" href="{% url 'apipost' %}" class="btn btn-outline btn-sm">API</a>
               </div>
               <!-- Navbar Right Side -->
               <div class="navbar-nav">
@@ -34,6 +35,7 @@
                 {% else %}
                     <a class="nav-item nav-link" href="{% url 'login' %}" class="btn btn-outline btn-sm">Login</a>
                     <a class="nav-item nav-link" href="{% url 'register' %}" class="btn btn-outline btn-sm">Register</a>
+                    
                 {% endif %}
                 <form class="form-inline my-2 my-lg-0" method=POST action="{% url 'search1' %}">
                   {% csrf_token %}
@@ -62,7 +64,7 @@
               <p class='text-muted'>You can put your projects here.
                 <ul class="list-group">
                   <li class="list-group-item list-group-item-light">Latest Projects</li>
-                  <a href="" class="list-group-item list-group-item-light">PROJECT API</a>
+                  <a href="{% url 'apipost' %}" class="list-group-item list-group-item-light">PROJECT API</a>
                   <a href="" class="list-group-item list-group-item-light">PROfile API</a>
                   <li class="list-group-item list-group-item-light">Calendars</li>
                   <li class="list-group-item list-group-item-light">etc</li>
