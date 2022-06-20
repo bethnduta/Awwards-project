@@ -22,7 +22,7 @@ As a user you can:
 
 ## SETUP/INSTALLATION REQUIREMENTS
 To access the code:
-* clone the repo
+* clone the repo https://github.com/bethnduta/Awwards-project.git
 * activate virtual environment using python3.10.4 as default handler python3 -m venv env && source env\bin\activate
 * Install dependencies Install dependencies that will create an environment for the app to run pip install -r requirements.txt
 * Create the database --psql
